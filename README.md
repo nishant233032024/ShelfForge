@@ -103,8 +103,9 @@ CORS uses `CLIENT_URL` with credentials enabled. Cookies use `secure: true` in p
 
 ## Deployment links
 
-- Frontend: _add Vercel URL after deploy_
-- Backend: _add Render URL after deploy_
+- Frontend: https://shelfforge.vercel.app
+- Backend: https://shelfforge-api.onrender.com
+- GitHub: https://github.com/nishant233032024/ShelfForge
 
 ## Trade-offs
 
