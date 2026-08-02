@@ -4,10 +4,11 @@ const SEVEN_DAYS_IN_MS = 7 * 24 * 60 * 60 * 1000;
 function getCookieOptions({ includeMaxAge = true } = {}) {
   const isProduction = process.env.NODE_ENV === "production";
 
-  // Cross-site Vercel → Render cookies need SameSite=None + Secure.
+  // Prefer Lax: production frontend proxies /api on the same origin,
+  // so cookies are first-party and survive Chrome's third-party cookie blocks.
   const cookieOptions = {
     httpOnly: true,
-    sameSite: isProduction ? "none" : "lax",
+    sameSite: "lax",
     secure: isProduction,
     path: "/",
   };

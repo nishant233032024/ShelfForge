@@ -95,7 +95,9 @@ Open http://localhost:3000
 
 ## Deployment
 
-- **Frontend:** Vercel — set root to `frontend`, add `NEXT_PUBLIC_API_BASE_URL`
+- **Frontend:** Vercel — set root to `frontend`
+  - `BACKEND_URL=https://your-api.onrender.com` (used by Next.js `/api` rewrites)
+  - Production browser calls same-origin `/api/*` so JWT cookies stay first-party
 - **Backend:** Render (or similar) — start with `npm start`, set `PORT`, `NODE_ENV=production`, `MONGODB_URI`, `JWT_SECRET`, `CLIENT_URL`
 - **Database:** MongoDB Atlas connection string via env
 
